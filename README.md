@@ -1,2 +1,2 @@
 # ServerInfoChecker
-Met deze php file kan je de informatie van MC servers checken! Vul het IP in en je krijgt het aantal spelers, plugins & nummer IP.
+By using this php file you can see server information like the IPv4, players and plugins.
