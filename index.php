@@ -1,10 +1,10 @@
 <html>
-/* Do whatever you want with this.
+<!-- Do whatever you want with this.
 I've created this program to get better with PHP & because I was bored.
 
 Yes, I know this is just reading some basic text from a json file hosted on the web. Deal with it.
 
-~MrWouter */
+~MrWouter -->
 <head>
   <title>Server Info Checker</title>
 </head>
