@@ -21,7 +21,7 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
         echo "<p>No IP set!</p>";
       }else{
         $ip = htmlspecialchars($_POST['server']);
-        echo "<p><b>Server IP:</b> " . $ip . ".</p>";
+        echo "<p><strong>Server IP:</strong> " . $ip . ".</p>";
         $json = file_get_contents('https://api.mcsrvstat.us/1/' . $ip);
         $obj = json_decode($json);
 
@@ -36,8 +36,8 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
         $version = htmlspecialchars($obj->version);
         $verSoftware = htmlspecialchars($obj->software);
 
-        echo "<p><b>Direct IP:</b> " . $numberip . ":" . $port . "</p>";
-        echo "<p><b>Version:</b> " . $version . " (" . $verSoftware . ")</p>";
+        echo "<p><strong>Direct IP:</strong> " . $numberip . ":" . $port . "</p>";
+        echo "<p><strong>Version:</strong> " . $version . " (" . $verSoftware . ")</p>";
 
         foreach ($obj->players->list as $player) {
 	         $players = $players . htmlspecialchars($player) . ', ';
@@ -46,11 +46,11 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
          $online = htmlspecialchars($obj->players->online);
          $max = htmlspecialchars($obj->players->max);
          if (empty($players)) {
-            echo "<p><b>Players:</b> " . $online . "/" . $max . "</p>";
+            echo "<p><strong>Players:</strong> " . $online . "/" . $max . "</p>";
          }else{
             #Remove last 2 characters ', ' from string
             $players = substr($players, 0, -2);
-            echo "<p><b>Players:</b> " . $players . " (" . $online . "/" . $max . ")</p>";
+            echo "<p><strong>Players:</strong> " . $players . " (" . $online . "/" . $max . ")</p>";
         }
 
         foreach ($obj->plugins->raw as $plugin) {
@@ -58,11 +58,11 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
          }
 
          if (empty($plugins)) {
-             echo "<p><b>Plugins:</b> Hidden.</p>";
+             echo "<p><strong>Plugins:</strong> Hidden.</p>";
          }else{
            #Remove last 2 characters ', ' from string
            $plugins = substr($plugins, 0, -2);
-           echo "<p><b>Plugins:</b> " . $plugins . "</p>";
+           echo "<p><strong>Plugins:</strong> " . $plugins . "</p>";
         }
       }
     }
