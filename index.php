@@ -7,6 +7,7 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
 ~MrWouter -->
 <head>
   <title>Server Info Checker</title>
+	<link rel="icon" href="https://www.spigotmc.org/data/avatars/l/73/73076.jpg">
 </head>
 <body>
      <form method="post">
