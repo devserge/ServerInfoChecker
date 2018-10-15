@@ -49,6 +49,7 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
           echo "<p><strong>Map:</strong> " . $mapname . "</p>";
         }
 
+
         foreach ($obj->players->list as $player) {
 	         $players = $players . htmlspecialchars($player) . ', ';
          }
