@@ -11,7 +11,7 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
 </head>
 <body>
      <form method="post">
-        <input type="text" name="server" placeholder="server" >
+        <input type="text" name="server" placeholder="play.mycoolserver.com" >
         <input type="submit" name="submit" value="Request information">
      </form>
 </body>
@@ -36,9 +36,19 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
         $port = htmlspecialchars($obj->port);
         $version = htmlspecialchars($obj->version);
         $verSoftware = htmlspecialchars($obj->software);
+        $mapname = htmlspecialchars($obj->map);
+        $icon = $obj->icon;
+
+        if (!empty($icon)) {
+          echo '<link rel="icon" href="' . $icon . '">';
+        }
 
         echo "<p><strong>Direct IP:</strong> " . $numberip . ":" . $port . "</p>";
         echo "<p><strong>Version:</strong> " . $version . " (" . $verSoftware . ")</p>";
+        if (!empty($mapname)) {
+          echo "<p><strong>Map:</strong> " . $mapname . "</p>";
+        }
+
 
         foreach ($obj->players->list as $player) {
 	         $players = $players . htmlspecialchars($player) . ', ';
