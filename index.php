@@ -45,7 +45,10 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
 
         echo "<p><strong>Direct IP:</strong> " . $numberip . ":" . $port . "</p>";
         echo "<p><strong>Version:</strong> " . $version . " (" . $verSoftware . ")</p>";
-	      
+        if (!empty($mapname)) {
+          echo "<p><strong>Map:</strong> " . $mapname . "</p>";
+        }
+
         foreach ($obj->players->list as $player) {
 	         $players = $players . htmlspecialchars($player) . ', ';
          }
