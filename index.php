@@ -11,7 +11,7 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
 </head>
 <body>
      <form method="post">
-        <input type="text" name="server" placeholder="play.mycoolserver.com" >
+        <input type="text" name="server" placeholder="play.my-coolserver.com" >
         <input type="submit" name="submit" value="Request information">
      </form>
 </body>
