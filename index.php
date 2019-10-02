@@ -37,25 +37,25 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
         $version = htmlspecialchars($obj->version);
         $verSoftware = htmlspecialchars($obj->software);
 
-        echo "<p><strong>Direct IP:</strong> " . $numberip . ":" . $port . "</p>";
-        echo "<p><strong>Version:</strong> " . $version . " (" . $verSoftware . ")</p>";
+        echo "<p><strong>Direct IP:</strong> ".$numberip.":".$port."</p>";
+        echo "<p><strong>Version:</strong> ".$version." (".$verSoftware.")</p>";
 
         foreach ($obj->players->list as $player) {
-	         $players = $players . htmlspecialchars($player) . ', ';
+	         $players = $players.htmlspecialchars($player).', ';
          }
 
          $online = htmlspecialchars($obj->players->online);
          $max = htmlspecialchars($obj->players->max);
          if (empty($players)) {
-            echo "<p><strong>Players:</strong> " . $online . "/" . $max . "</p>";
+            echo "<p><strong>Players:</strong> ".$online."/".$max."</p>";
          }else{
             #Remove last 2 characters ', ' from string
             $players = substr($players, 0, -2);
-            echo "<p><strong>Players:</strong> " . $players . " (" . $online . "/" . $max . ")</p>";
+            echo "<p><strong>Players:</strong> " . $players." (" . $online."/" .$max.")</p>";
         }
 
         foreach ($obj->plugins->raw as $plugin) {
-	         $plugins = $plugins . htmlspecialchars($plugin) . ', ';
+	         $plugins = $plugins.htmlspecialchars($plugin).', ';
          }
 
          if (empty($plugins)) {
@@ -63,7 +63,7 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
          }else{
            #Remove last 2 characters ', ' from string
            $plugins = substr($plugins, 0, -2);
-           echo "<p><strong>Plugins:</strong> " . $plugins . "</p>";
+           echo "<p><strong>Plugins:</strong> ".$plugins."</p>";
         }
       }
     }
