@@ -6,12 +6,19 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
 
 ~MrWouter -->
 <head>
-  <title>Server Info Checker</title>
+	<?php
+	if(empty($_POST['server'])){
+		$titleip = "Server Info Checker";
+	}else{
+	 $titleip = "Checking ".$_POST['server'];
+	}
+	?>
+  <title><?php echo $titleip; ?> </title>
 	<link rel="icon" href="https://www.spigotmc.org/data/avatars/l/73/73076.jpg">
 </head>
 <body>
      <form method="post">
-        <input type="text" name="server" placeholder="server" >
+        <input type="text" name="server" placeholder="play.mijngeweldigeserver.nl" >
         <input type="submit" name="submit" value="Request information">
      </form>
 </body>
