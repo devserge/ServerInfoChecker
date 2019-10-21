@@ -18,7 +18,7 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
 </head>
 <body>
      <form method="post">
-        <input type="text" name="server" placeholder="play.mijngeweldigeserver.nl" >
+        <input type="text" name="server" placeholder="play.my-coolserver.com" >
         <input type="submit" name="submit" value="Request information">
      </form>
 </body>
@@ -29,8 +29,8 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
         echo "<p>No IP set!</p>";
       }else{
         $ip = htmlspecialchars($_POST['server']);
-        echo "<p><strong>Server IP:</strong> " . $ip . ".</p>";
-        $json = file_get_contents('https://api.mcsrvstat.us/1/' . $ip);
+        echo "<p><strong>Server IP:</strong> ".$ip.".</p>";
+        $json = file_get_contents('https://api.mcsrvstat.us/1/'.$ip);
         $obj = json_decode($json);
 
         $numberip = htmlspecialchars($obj->ip);
@@ -43,6 +43,18 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
         $port = htmlspecialchars($obj->port);
         $version = htmlspecialchars($obj->version);
         $verSoftware = htmlspecialchars($obj->software);
+        $mapname = htmlspecialchars($obj->map);
+        $icon = $obj->icon;
+
+        if (!empty($icon)) {
+          echo '<link rel="icon" href="'.$icon.'">';
+        }
+
+        echo "<p><strong>Direct IP:</strong> ".$numberip.":".$port."</p>";
+        echo "<p><strong>Version:</strong> ".$version." (".$verSoftware.")</p>";
+        if (!empty($mapname)) {
+          echo "<p><strong>Map:</strong> ".$mapname."</p>";
+        }
 
         echo "<p><strong>Direct IP:</strong> ".$numberip.":".$port."</p>";
         echo "<p><strong>Version:</strong> ".$version." (".$verSoftware.")</p>";
