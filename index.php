@@ -13,7 +13,7 @@ Yes, I know this is just reading some basic text from a json file hosted on the 
 	 $titleip = "Checking ".$_POST['server'];
 	}
 	?>
-  <title><?php echo $titleip; ?> </title>
+  <title><?php= $titleip; ?> </title>
 	<link rel="icon" href="https://www.spigotmc.org/data/avatars/l/73/73076.jpg">
 </head>
 <body>
